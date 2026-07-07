@@ -1,0 +1,41 @@
+name: "❓ Question"
+description: Ask a question about ALOY installation, usage, or behavior
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before asking, please check the [FAQ](https://github.com/dhanush708/aloy/blob/main/docs/faq.md) and [Installation Guide](https://github.com/dhanush708/aloy/blob/main/docs/installation.md).
+
+  - type: input
+    id: aloy_version
+    attributes:
+      label: "ALOY Version"
+      placeholder: "e.g., 1.0.0"
+    validations:
+      required: false
+
+  - type: input
+    id: os_version
+    attributes:
+      label: "Operating System"
+      placeholder: "e.g., Windows 11"
+    validations:
+      required: false
+
+  - type: textarea
+    id: question
+    attributes:
+      label: "Your Question"
+      description: "What would you like to know?"
+      placeholder: "How do I..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: already_tried
+    attributes:
+      label: "What Have You Already Tried?"
+      description: "Share what you've already checked or attempted."
+    validations:
+      required: false

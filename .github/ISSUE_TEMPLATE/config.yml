@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 General Discussion
+    url: https://github.com/dhanush708/aloy/discussions
+    about: Share your experience, ask general questions, or discuss ideas in the community.
+  - name: 📧 Private Support / Commercial Licensing
+    url: mailto:anbudhanush31@gmail.com
+    about: For private inquiries, commercial licensing, or sensitive matters — contact the creator directly.
+  - name: 🔒 Security Vulnerabilities
+    url: mailto:anbudhanush31@gmail.com
+    about: "IMPORTANT: Do not report security vulnerabilities in public issues. Email the creator privately."
