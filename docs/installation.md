@@ -7,11 +7,11 @@
 ## System Requirements
 
 | Requirement | Minimum | Recommended |
-|:---|:---|:---|
+| :--- | :--- | :--- |
 | **Operating System** | Windows 10 64-bit | Windows 11 64-bit |
-| **RAM** | 8 GB | 16 GB |
-| **GPU** | CPU-only (slow) | NVIDIA GPU 6+ GB VRAM |
-| **Disk Space** | 5 GB free | 20 GB free |
+| **RAM** | 16 GB | 32 GB |
+| **GPU** | Dedicated GPU (6+ GB VRAM) | Dedicated GPU (8+ GB VRAM) |
+| **Disk Space** | 5 GB free | 25 GB free |
 | **Ollama** | Required (latest) | Required (latest) |
 | **Python** | Not required (installer) | 3.11+ (source only) |
 
@@ -27,8 +27,9 @@ This is the easiest way to install ALOY. No Python setup required.
 
 2. Pull the required models:
    ```bash
-   ollama pull phi4:latest
-   ollama pull qwen2.5-coder:7b
+   ollama pull qwen3:14b
+   ollama pull qwen2.5-coder:14b
+   ollama pull deepseek-r1:14b
    ollama pull nomic-embed-text:latest
    ```
 
@@ -63,7 +64,7 @@ This method requires Python 3.11 or higher.
 ### Steps
 
 ```powershell
-# Clone the repository (when source is available)
+# Clone the repository
 git clone https://github.com/dhanush708/aloy.git
 cd aloy
 
@@ -107,6 +108,8 @@ Your existing conversations and memories are preserved across updates.
 
 ### ALOY won't start / browser doesn't open
 
+- If ALOY crashes or fails to initialize, a native Windows error dialog will appear explaining the issue.
+- Check `logs/startup.log` inside the ALOY installation directory for a full diagnostic traceback.
 - Ensure Ollama is installed and running (`ollama serve` in a terminal).
 - Try navigating manually to `http://127.0.0.1:8000` in your browser.
 - Check Windows Defender or your antivirus — it may have flagged ALOY on first run (this is a false positive common with PyInstaller-built apps).
@@ -125,8 +128,8 @@ Your existing conversations and memories are preserved across updates.
 ### Very slow responses
 
 - Ensure Ollama is using your GPU: run `ollama ps` while a model is loaded and check for GPU utilization.
-- Ensure your NVIDIA drivers are up to date.
-- Consider using a smaller model variant if VRAM is limited.
+- Ensure your GPU drivers are up to date.
+- Consider using a smaller model variant (like `qwen2.5-coder:7b`) if VRAM is limited.
 
 ---
 

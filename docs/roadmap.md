@@ -2,7 +2,7 @@
 
 **ALOY** | [Back to README](../README.md)
 
-This document outlines the planned evolution of ALOY across major version milestones.
+This document outlines the planned evolution of ALOY across major milestones.
 
 ---
 
@@ -12,10 +12,10 @@ The first public release of ALOY. Core AI operating system with full local infer
 
 **Highlights:**
 - Event bus microkernel architecture
-- Multi-agent FSM grid (Planner, Coder, Tester, Debugger, Documenter)
-- Hybrid vector + FTS5 memory with RRF scoring
-- 6-layer knowledge router with live web search
-- SSE streaming conversation engine
+- Multi-agent FSM grid (Planner, Coder, Tester, Debugger, Documenter) with up to 4 parallel task execution steps
+- Hybrid vector + FTS5 memory with Reciprocal Rank Fusion (RRF) scoring
+- 6-layer knowledge router with live concurrent web search rewriter
+- SSE streaming conversation engine with dynamic inline token cursor
 - Dark, Light, and OLED UI themes
 - Windows installer (`ALOY-Setup-1.0.0.exe`)
 
@@ -23,37 +23,27 @@ The first public release of ALOY. Core AI operating system with full local infer
 
 ## 🔜 Version 1.1 — Q3 2026 (Planned)
 
-Focus: **Developer Experience & Installer Quality**
+Focus: **Developer Experience & Tool Customization**
 
-- **Dynamic Tool Plugins**: Allow workspace directories to define their own custom tools loaded at runtime
-- **Smaller Installer**: Rebuild packaging pipeline with a dedicated virtualenv to exclude unused Python packages and significantly reduce installer size
-- **Screenshot Gallery**: Add real UI screenshots to the public repository
-- **Model Configuration UI**: Easier in-app model management (add, remove, test models)
-- **Memory Export**: Export/import full memory snapshots as JSON for backup and migration
-- **Improved Web Search**: Multiple search provider support (Bing, Google via SerpAPI)
-
----
-
-## 🔭 Version 2.0 — Q1 2027 (Planned)
-
-Focus: **Collaborative Multi-Agent Workspaces**
-
-- **Shared Workspaces**: Multiple agent teams working on split components of a project simultaneously
-- **Cross-Session State Sync**: Agents share intermediate state and results across workspace splits
-- **Advanced Agent Roles**: Architect, Security Auditor, Performance Profiler
-- **macOS Support**: Official packaging and testing for macOS (Apple Silicon and Intel)
-- **Plugin Marketplace**: Community-contributed tool plugins
+- **Dynamic Tool Plugins**: Allow workspace directories to define their own custom tools loaded at runtime.
+- **Smaller Installer**: Rebuild packaging pipeline with a dedicated virtualenv to exclude unused Python packages and significantly reduce installer size.
+- **Model Configuration UI**: Easier in-app model management (add, remove, test models).
+- **Memory Export**: Export/import full memory snapshots as JSON for backup and migration.
+- **Improved Web Search**: Support for additional web search APIs.
 
 ---
 
-## 🚀 Version 3.0 — Q4 2027 (Vision)
+## 🔭 Future Releases (Planned)
 
-Focus: **Self-Evolving Kernel**
+Focus: **Collaborative Multi-Agent Workspaces & Self-Evolution**
 
-- **Autonomous Prompt Evolution**: The microkernel analyzes its own performance and autonomously refines system prompts to improve response quality
-- **Adaptive Model Routing**: The model router learns from past task outcomes and adjusts routing decisions automatically
-- **Linux Support**: Official Ubuntu/Debian packaging
-- **Embedded Agent API**: Local REST API for third-party integrations
+- **Shared Workspaces**: Multiple agent teams working on split components of a project simultaneously.
+- **Cross-Session State Sync**: Agents share intermediate state and results across workspace splits.
+- **Advanced Agent Roles**: Architect, Security Auditor, and Performance Profiler agents.
+- **Multi-OS Support**: Official packaging and testing for macOS (Apple Silicon and Intel) and Linux.
+- **Plugin Marketplace**: Community-contributed tool plugins.
+- **Autonomous Prompt Evolution**: The microkernel analyzes its own performance and autonomously refines system prompts to improve response quality.
+- **Adaptive Model Routing**: The model router learns from past task outcomes and adjusts routing decisions automatically.
 
 ---
 
@@ -67,11 +57,10 @@ To suggest a feature or vote on roadmap items, open a [Feature Request](https://
 
 ---
 
-## Version History
+## Milestone History
 
 | Version | Date | Status |
-|:---|:---|:---|
+| :--- | :--- | :--- |
 | 1.0.0 | July 2026 | ✅ Released |
 | 1.1 | Q3 2026 | 🔜 Planned |
-| 2.0 | Q1 2027 | 🔭 Planned |
-| 3.0 | Q4 2027 | 🚀 Vision |
+| Future Releases | TBD | 🔭 Planned |

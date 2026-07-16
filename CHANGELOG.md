@@ -90,4 +90,4 @@ ALOY Version 1.0.0 is the first official public release of the ALOY Advanced Loc
 
 ## What's Next
 
-See [docs/roadmap.md](docs/roadmap.md) for the v1.1 and v2.0 plans.
+See [docs/roadmap.md](docs/roadmap.md) for future release plans.

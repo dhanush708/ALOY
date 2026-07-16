@@ -4,26 +4,20 @@
 
 ### Advanced Local-First Agentic Operating System
 
-*Your AI companion that runs entirely on your machine.*
+*Your AI companion that runs entirely on your local machine.*
 
 [![Version](https://img.shields.io/badge/Version-1.0.0-informational.svg?style=for-the-badge)](https://github.com/dhanush708/aloy/releases)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%2B-blue.svg?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/dhanush708/aloy/releases)
 [![License](https://img.shields.io/badge/License-Proprietary%20EULA-red.svg?style=for-the-badge)](LICENSE)
 [![Ollama](https://img.shields.io/badge/Requires-Ollama-orange.svg?style=for-the-badge)](https://ollama.com)
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![Tests](https://img.shields.io/badge/Tests-233%20Passed-brightgreen.svg?style=for-the-badge&logo=pytest)](https://github.com/dhanush708/aloy)
+[![Tests](https://img.shields.io/badge/Tests-531%20Passed-brightgreen.svg?style=for-the-badge&logo=pytest)](https://github.com/dhanush708/aloy)
 
 </div>
 
 <br/>
 
-<div align="center">
-  <img src="assets/aloy_banner.png" alt="ALOY — Advanced Local-First Agentic Operating System" width="100%"/>
-</div>
-
-<br/>
-
-> **ALOY is a fully offline, privacy-first AI operating system.** It runs entirely on your device — no cloud, no subscriptions, no API keys. It thinks, plans, codes, tests, and learns locally.
+> **ALOY is a fully offline, privacy-first AI operating system.** It runs entirely on your local hardware — no cloud dependencies, no subscription fees, no external API keys. It thinks, plans, codes, tests, and learns locally.
 
 ---
 
@@ -36,63 +30,59 @@
 5. [System Requirements](#-system-requirements)
 6. [Download & Install](#-download--install)
 7. [First Run Guide](#-first-run-guide)
-8. [Screenshots](#-screenshots)
+8. [Dynamic UI & Telemetry](#-dynamic-ui--telemetry)
 9. [Documentation](#-documentation)
 10. [Roadmap](#-roadmap)
 11. [Known Limitations](#-known-limitations)
 12. [FAQ](#-faq)
 13. [Bug Reporting & Support](#-bug-reporting--support)
 14. [About the Creator](#-about-the-creator)
-15. [Acknowledgements](#-acknowledgements)
-16. [License](#-license)
+15. [License](#-license)
 
 ---
 
 ## 🌟 What is ALOY?
 
-**ALOY** is a local-first AI operating system — an offline assistant, coding partner, and autonomous multi-agent runtime that operates entirely on your own hardware.
+**ALOY** is a local-first AI operating system — a local companion, software engineering partner, and autonomous multi-agent runtime designed to operate entirely on your own hardware. 
 
-It integrates:
+ALOY orchestrates specialized subsystems locally:
+- An **asynchronous microkernel event bus** decoupling system services.
+- **Multi-tier hybrid memory** combining semantic vector search and exact full-text indexing (FTS5).
+- A **sandboxed tool execution engine** with explicit, user-gated authorization callbacks.
+- An **autonomous multi-agent FSM grid** that decomposes, writes, tests, and debugs code locally.
 
-- A **persistent event bus microkernel** that orchestrates all subsystems
-- **Multi-tier hybrid memory** combining semantic vector search and full-text indexing
-- A **sandboxed tool execution engine** with explicit authorization gates
-- An **autonomous multi-agent FSM grid** capable of writing, testing, and debugging software end-to-end
-
-**ALOY does not send anything to the cloud.** Every inference request runs locally through [Ollama](https://ollama.com). Every memory is stored in your local SQLite database. There is no telemetry, no subscription, and no API key required.
+**ALOY does not send your data to the cloud.** Every inference request runs through your local [Ollama](https://ollama.com) server, and all conversation histories are stored inside an isolated SQLite database on your device.
 
 ---
 
 ## 🧩 Why ALOY?
 
 | Principle | What It Means For You |
-|:---|:---|
-| **Fully Offline** | Everything — models, embeddings, memory, agent execution — runs on your machine. No internet required after setup. |
-| **Zero Data Collection** | Your conversations, code, and memories never leave your device. No telemetry. No analytics. No logging to external servers. |
-| **Autonomous Agent Grid** | ALOY doesn't just generate code — it spawns a team of agents that write, test, debug, and document software autonomously until the task is done. |
-| **Persistent Long-Term Memory** | ALOY remembers across sessions using hybrid vector + full-text memory with decay scoring, contradiction auditing, and background consolidation. |
-| **Prompt Integrity** | Stream sanitizers and capability filters prevent system prompts, identity metadata, and internal tags from leaking to the UI. |
-| **Premium Experience** | A polished dark/light/OLED interface with live hardware telemetry, real-time streaming, and animated reasoning output. |
+| :--- | :--- |
+| **Fully Offline** | Inference, embeddings, databases, and tool actions run completely offline on your hardware. |
+| **Zero Data Collection** | Conversations, code context, and personal memory stay strictly local. No telemetry, no analytics, no external servers. |
+| **Autonomous Agent Grid** | Rather than generating raw code chunks, ALOY schedules cooperating agents (Planner, Coder, Tester, Debugger) that execute, test, and refactor code until unit tests pass. |
+| **Persistent Long-Term Memory** | Retains creator profiles, user preferences, and developer configurations across sessions using hybrid FTS5 + vector search with Reciprocal Rank Fusion (RRF) scoring. |
+| **Prompt Integrity & Security** | In-stream sanitizers and lookup buffers prevent system prompt configurations and XML metadata tags from leaking into user chat windows. |
+| **Premium Experience** | Polished SPA interface featuring animated thought-streaming consoles, light/dark/OLED themes, and real-time CPU/GPU/VRAM telemetry. |
 
 ---
 
 ## 🚀 Key Features
 
-| Subsystem | What It Does |
-|:---|:---|
-| **Conversation Engine** | Real-time SSE streaming with inline cursor, automatic conversation naming, and branched history navigation |
-| **Memory System** | Multi-tier vector + FTS5 search with Reciprocal Rank Fusion scoring, memory decay, tag groups, and background contradiction audits |
-| **Reasoning Engine** | Multi-stage thought execution (Draft → Refine → Verify) with visible real-time reasoning console |
-| **Knowledge Router** | 6-layer progressive routing (Episodic Memory → Workspace → Documentation → Live Web Search) to minimize hallucinations |
-| **Agent Runtime Grid** | Planner, Coder, Tester, Debugger, and Documenter agents with Git state checkpointing and full rollback |
-| **Tool Sandbox** | Boundary-checked file editors, terminal shells, Docker control, and Python runners — all gated by explicit user confirmation |
-| **Premium UI/UX** | Dark, Light, and OLED themes with Outfit/Inter typography, live CPU/GPU/RAM gauges, and responsive panels |
+- **Conversation Engine**: Real-time SSE streaming with inline cursors, automatic title summarization, and branchable timeline histories.
+- **Memory System**: cos-similarity vector search (`sqlite-vec`) merged with FTS5 keyword indexing, memory decay scoring, and background contradiction checks.
+- **Reasoning Engine**: Multi-stage thinking (Draft → Refine → Verify) displaying raw logs in the "Reasoning Thoughts" live stats drawer.
+- **Knowledge Router**: 6-layer escalation schema (Episodic Memory → Local Files → Docs → Web Search) to supply accurate context.
+- **Search Pipeline**: Semantic search classification, concurrent DuckDuckGo queries, temporal relevance scoring (+15 points official doc bonus), query broadening retries, and topic drift classification.
+- **Agent Runtime Grid**: Concurrent execution of up to 4 parallel task steps on a dynamic dependency graph with Git checkpointing and surgical rollbacks.
+- **Tool Sandbox**: Absolute workspace boundary checks for file, terminal, git, and Docker tools, guarded by mandatory confirmation modals.
 
 ---
 
 ## 🏗️ Architecture Overview
 
-ALOY is structured around a **microkernel event bus** that decouples all subsystems. Every user message triggers a fully auditable pipeline:
+ALOY relies on a microkernel core running a central event bus to coordinate services:
 
 ```
 User Message
@@ -100,13 +90,13 @@ User Message
      ▼
  Event Bus (Async Microkernel)
      │
-     ├──► Identity Engine      (user + creator profile resolution)
+     ├──► Identity Engine      (creator + user profile resolution)
      ├──► Memory Manager       (hybrid vector + FTS5 retrieval)
      ├──► Knowledge Router     (6-layer query routing + web search)
      ├──► Model Router         (task-to-model assignment)
      │
      ▼
- Local Ollama Model (Phi-4 / Qwen2.5-Coder / nomic-embed-text)
+ Local Ollama Model (Qwen3 / Qwen2.5-Coder / DeepSeek R1)
      │
      ▼
  Prompt Integrity Filter       (stream sanitization)
@@ -116,7 +106,6 @@ User Message
 ```
 
 **Agent Grid FSM Execution:**
-
 ```
 IDLE → PLANNING → EXECUTING → TESTING → DEBUGGING → COMPLETED
                     │                        │
@@ -131,239 +120,116 @@ IDLE → PLANNING → EXECUTING → TESTING → DEBUGGING → COMPLETED
 ## 💻 System Requirements
 
 | Requirement | Minimum | Recommended |
-|:---|:---|:---|
+| :--- | :--- | :--- |
 | **Operating System** | Windows 10 (64-bit) | Windows 11 (64-bit) |
-| **RAM** | 8 GB | 16 GB or more |
-| **GPU** | CPU-only (slow) | NVIDIA GPU with 6+ GB VRAM |
-| **Storage** | 5 GB free | 20 GB free (for models) |
-| **Ollama** | Required | Latest version |
-| **Python** | Not required (installer) | 3.11+ (source only) |
-
-> [!IMPORTANT]
-> ALOY requires [Ollama](https://ollama.com) to be installed and running before launch. ALOY will guide you through pulling the required models on first launch if they are not already installed.
+| **RAM** | 16 GB | 32 GB or more |
+| **GPU** | Dedicated GPU (6+ GB VRAM) | NVIDIA GPU with 8+ GB VRAM |
+| **Storage** | 5 GB free | 25 GB free (for local model storage) |
+| **Ollama** | Required | Latest version active in background |
 
 ---
 
 ## ⬇️ Download & Install
 
 ### Step 1 — Download Ollama
-
-Download and install Ollama from [ollama.com](https://ollama.com). Run it and confirm it is active.
+Download and install Ollama from [ollama.com](https://ollama.com). Ensure it is running in the background.
 
 ### Step 2 — Download ALOY
-
-Go to the **[Releases](https://github.com/dhanush708/aloy/releases)** page and download the latest installer:
-
+Go to the **[Releases](https://github.com/dhanush708/aloy/releases)** page and download the installer:
 ```
 ALOY-Setup-1.0.0.exe
 ```
 
 ### Step 3 — Run the Installer
-
-Double-click `ALOY-Setup-1.0.0.exe`. The installer will:
-- Install ALOY to `Program Files\ALOY`
-- Create a Desktop shortcut
-- Create a Start Menu entry
-- Register an uninstaller in Windows Add/Remove Programs
+Double-click `ALOY-Setup-1.0.0.exe`. The installer will place ALOY in `Program Files\ALOY` and create Desktop and Start Menu shortcuts.
 
 ### Step 4 — Launch ALOY
-
-Click the **ALOY** Desktop shortcut. Your browser will open automatically at the ALOY interface. On first launch, ALOY checks for Ollama and required models.
-
-> [!NOTE]
-> If you prefer to run from source, see the [Installation Guide](docs/installation.md) for developer setup instructions.
+Click the **ALOY** desktop shortcut. Your browser will automatically open to the ALOY workspace dashboard. On first launch, the startup wizard will verify model installations.
 
 ---
 
 ## 🚀 First Run Guide
 
-1. **Ensure Ollama is running.** If it is not installed, download it from [ollama.com](https://ollama.com).
-
-2. **Pull the required models** (ALOY will prompt you to do this if needed):
+1. **Verify Ollama is active** in your taskbar.
+2. **Pull the required local models** using a terminal (ALOY will display a checklist of these commands if they are missing):
    ```bash
-   ollama pull phi4:latest
-   ollama pull qwen2.5-coder:7b
+   ollama pull qwen3:14b
+   ollama pull qwen2.5-coder:14b
+   ollama pull deepseek-r1:14b
    ollama pull nomic-embed-text:latest
    ```
-
-3. **Launch ALOY** via the Desktop shortcut.
-
-4. **Complete the onboarding wizard.** ALOY will display a first-run setup screen where you enter your name and preferences. Everything is stored locally.
-
-> [!NOTE]
-> If Ollama is not detected or required models are missing, ALOY displays a dependency overlay with the exact `ollama pull` commands to run — no guesswork required.
+3. **Launch ALOY** and complete the onboarding wizard. Enter your name and custom instructions; all setup preferences are preserved strictly in your local database.
 
 ---
 
-## 📸 Screenshots
+## 📊 Dynamic UI & Telemetry
 
-Here are placeholders for the core interfaces and visual panels in ALOY. These placeholder graphics will be replaced with real application screenshots upon the official v1.0.0 release.
+ALOY's single-page web interface is designed with a premium, glassmorphism aesthetic featuring:
+- **System Telemetry Panel**: Live hardware gauges tracking CPU usage, system RAM, and GPU VRAM indicators in real-time.
+- **Reasoning thoughts Drawer**: Displays the active thinking trace (Draft → Refine → Verify) of the reasoning model as it runs.
+- **Execution Grid Panel**: Shows the state of the active agent session, displaying progress bars, parallel task queues, execution retry counts, and live action confirmation logs.
+- **Theme Controls**: Switch seamlessly between Light, Dark, and OLED high-contrast developer themes.
 
-### 1. Home Dashboard
-![ALOY Home Dashboard](assets/screenshots/01-home.png)
+### 📸 Screenshot Gallery
 
-### 2. Conversation & Chat Interface
-![ALOY Conversation Interface](assets/screenshots/02-chat.png)
-
-### 3. Multi-Agent Control Grid
-![ALOY Agent Control Console](assets/screenshots/03-agent-panel.png)
-
-### 4. Memory Management & Explorer
-![ALOY Memory Management](assets/screenshots/04-memory.png)
-
-### 5. System Settings
-![ALOY System Settings](assets/screenshots/05-settings.png)
-
-### 6. Knowledge Routing & Web Search
-![ALOY Knowledge Routing & Web Search](assets/screenshots/06-search.png)
-
-### 7. Windows Setup Installer Wizard
-![ALOY Windows Setup Wizard](assets/screenshots/07-installation.png)
+<div align="center">
+  <table>
+    <tr>
+      <td><b>01. Workspace Home</b><br/><img src="assets/screenshots/01-home.png" width="380" alt="Workspace Home"/></td>
+      <td><b>02. Chat Client</b><br/><img src="assets/screenshots/02-chat.png" width="380" alt="Chat Client"/></td>
+    </tr>
+    <tr>
+      <td><b>03. Agent Execution Grid</b><br/><img src="assets/screenshots/03-agent-panel.png" width="380" alt="Agent Panel"/></td>
+      <td><b>04. Long-Term Memory Explorer</b><br/><img src="assets/screenshots/04-memory.png" width="380" alt="Memory Explorer"/></td>
+    </tr>
+    <tr>
+      <td><b>05. Settings & Model Configuration</b><br/><img src="assets/screenshots/05-settings.png" width="380" alt="Settings Interface"/></td>
+      <td><b>06. Concurrent Web Search</b><br/><img src="assets/screenshots/06-search.png" width="380" alt="Web Search Panel"/></td>
+    </tr>
+  </table>
+</div>
 
 ---
 
-## 📚 Documentation
+## 📖 Documentation
 
-| Document | Description |
-|:---|:---|
-| [Installation Guide](docs/installation.md) | Full installation instructions for both end users and developers |
-| [Architecture Overview](docs/architecture.md) | High-level architecture, subsystem design, and data flow |
-| [FAQ](docs/faq.md) | Answers to common questions |
-| [Roadmap](docs/roadmap.md) | Planned features and version timeline |
-| [Release Notes](docs/release-notes.md) | What's new in each release |
-| [Known Limitations](docs/known-limitations.md) | Current known issues and limitations |
+Detailed architectural and developer guides are available:
+- [Technical Whitepaper](docs/aloy_technical_whitepaper.pdf) — Comprehensive system design and AI safety threat model specification.
+- [System Architecture](docs/architecture.md) — Event-driven microkernel blocks and subsystem services.
+- [Installation Guide](docs/installation.md) — Comprehensive guide on manual installations, model configurations, and setup parameters.
+- [Frequently Asked Questions (FAQ)](docs/faq.md) — Troubleshooting guides, GPU acceleration advice, and VRAM management.
+- [Known Limitations](docs/known-limitations.md) — VRAM constraints and OS targets.
+- [Roadmap](docs/roadmap.md) — Future feature iterations.
 
 ---
 
 ## 🗺️ Roadmap
 
-| Version | Timeline | Planned Focus |
-|:---|:---|:---|
-| **v1.0.0** | July 2026 | ✅ **Released** — Core AI OS, agent grid, hybrid memory, Windows installer |
-| **v1.1** | Q3 2026 | Dynamic tool plugins; reduced installer size via virtualenv builds |
-| **v2.0** | Q1 2027 | Collaborative multi-agent teams with split workspaces and shared state |
-| **v3.0** | Q4 2027 | Self-evolving microkernel — autonomously improves its own backend prompts |
-
-See [docs/roadmap.md](docs/roadmap.md) for full details.
-
----
-
-## ⚠️ Known Limitations
-
-- **Windows Only**: The Windows installer (`ALOY-Setup-1.0.0.exe`) targets Windows 10/11. Linux and macOS developer installations are possible from source but are not officially packaged for v1.0.
-- **Ollama Dependency**: ALOY requires Ollama to be running. Without it, no inference is available.
-- **VRAM Requirements**: Larger models (e.g. `qwen2.5-coder:7b`) require 8+ GB VRAM. CPU-only inference is supported but significantly slower.
-- **Internet Search**: Live web search uses DuckDuckGo's public API. Results may vary in quality or availability based on network conditions.
-- **First-Launch Performance**: The first conversation may be slower as models warm up in Ollama.
-
-See [docs/known-limitations.md](docs/known-limitations.md) for the full list.
-
----
-
-## ❓ FAQ
-
-**Q: Does ALOY send my data anywhere?**
-> No. ALOY is completely offline. Your conversations, memories, and code never leave your machine.
-
-**Q: Do I need a GPU?**
-> Not strictly. ALOY works with CPU-only Ollama, but responses will be significantly slower. An NVIDIA GPU with 6+ GB VRAM provides a much better experience.
-
-**Q: What models does ALOY use?**
-> ALOY uses `phi4:latest` for conversation and reasoning, `qwen2.5-coder:7b` for agent coding tasks, and `nomic-embed-text` for semantic memory embeddings. All are free, open-weight models served locally via Ollama.
-
-**Q: Can I use different models?**
-> Yes. Model assignments are configurable via the settings interface and config files.
-
-**Q: Is ALOY open-source?**
-> The public release is provided as a compiled installer under a custom proprietary EULA. The source code is not publicly available at this time.
-
-**Q: How do I uninstall ALOY?**
-> Use Windows "Add or Remove Programs" — search for ALOY and click Uninstall.
-
-See [docs/faq.md](docs/faq.md) for more questions.
+- **v1.1 (Q3 2026)**: Dynamic tool plugins, smaller installer size, and CSV/JSON memory exports.
+- **v1.2 (Q4 2026)**: Collaborative workspaces and cross-session agent sync.
+- **v1.5 (Q2 2027)**: Self-evolution microkernel — autonomous backend prompt compilation and model fallback optimization.
 
 ---
 
 ## 🐛 Bug Reporting & Support
 
-Found a bug or need help?
-
-1. **Open an issue** → [GitHub Issues](https://github.com/dhanush708/aloy/issues)
-   - Use the **Bug Report** template for reproducible bugs
-   - Use the **Feature Request** template for suggestions
-   - Use the **Question** template for support questions
-
-2. **For private support or commercial licensing inquiries**, contact the creator directly at [anbudhanush31@gmail.com](mailto:anbudhanush31@gmail.com).
-
-When reporting a bug, please include:
-- Your Windows version
-- ALOY version
-- Ollama version
-- GPU / VRAM (if applicable)
-- Steps to reproduce
-
-> [!CAUTION]
-> **Security vulnerabilities** must NOT be reported via public GitHub Issues. Email [anbudhanush31@gmail.com](mailto:anbudhanush31@gmail.com) privately. See [SECURITY.md](SECURITY.md).
+1. **Submit an issue** on [GitHub Issues](https://github.com/dhanush708/aloy/issues) with a description, reproduction steps, and your environment setup.
+2. **For commercial inquiries or EULA support**, contact the creator at [anbudhanush31@gmail.com](mailto:anbudhanush31@gmail.com).
 
 ---
 
 ## 👤 About the Creator
 
-**ALOY Version 1.0** was designed, architected, engineered, implemented, tested, documented, packaged, and released end-to-end by **Dhanush A.** as an independent software engineering project.
+**ALOY** was designed, engineered, implemented, tested, documented, packaged, and released end-to-end by **Dhanush A.** as an independent local software project.
 
-<table>
-<tr><td><strong>Creator</strong></td><td>Dhanush A.</td></tr>
-<tr><td><strong>GitHub</strong></td><td><a href="https://github.com/dhanush708">github.com/dhanush708</a></td></tr>
-<tr><td><strong>Contact</strong></td><td><a href="mailto:anbudhanush31@gmail.com">anbudhanush31@gmail.com</a></td></tr>
-</table>
+- **Creator**: Dhanush A.
+- **GitHub**: [github.com/dhanush708](https://github.com/dhanush708)
+- **Contact**: [anbudhanush31@gmail.com](mailto:anbudhanush31@gmail.com)
 
-*All code, assets, interfaces, documentation, and branding remain the intellectual property of Dhanush A.*
-
----
-
-## 🤝 Acknowledgements
-
-ALOY is built on the shoulders of the open-source community. Thanks to the creators and maintainers of:
-
-| Project | Purpose |
-|:---|:---|
-| [Python](https://python.org) | Core runtime |
-| [FastAPI](https://fastapi.tiangolo.com) | Web server infrastructure |
-| [Ollama](https://ollama.com) | Local LLM serving |
-| [SQLite](https://sqlite.org) & [sqlite-vec](https://github.com/asg017/sqlite-vec) | Database and vector search |
-| [Marked.js](https://marked.js.org) | Markdown rendering |
-| [Mermaid](https://mermaid.js.org) | Architecture diagrams |
-| [Pytest](https://pytest.org) | Testing framework |
-| [PyInstaller](https://pyinstaller.org) | Windows packaging |
-
-See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for full license attributions.
+*All event-driven components, FSM grid orchestrators, knowledge routers, and telemetry systems are the intellectual property of the creator.*
 
 ---
 
 ## 📄 License
 
-ALOY is proprietary software. All rights reserved.
-
-| Document | Link |
-|:---|:---|
-| End User License Agreement | [LICENSE](LICENSE) |
-| Terms of Use | [TERMS_OF_USE.md](TERMS_OF_USE.md) |
-| Privacy Policy | [PRIVACY_POLICY.md](PRIVACY_POLICY.md) |
-| Disclaimer | [DISCLAIMER.md](DISCLAIMER.md) |
-| Security Policy | [SECURITY.md](SECURITY.md) |
-| Third-Party Notices | [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) |
-
-**Key terms:**
-- ✅ Personal and non-commercial use is permitted
-- ❌ Redistribution, rebranding, or commercial resale is prohibited
-- ✅ Creator attribution must remain intact in all copies
-
----
-
-<div align="center">
-
-Made with dedication by **[Dhanush A.](https://github.com/dhanush708)**
-
-⭐ If you find ALOY useful, please star this repository!
-
-</div>
+ALOY is proprietary software distributed under a custom EULA. Review [LICENSE](LICENSE) for redistribution restrictions, personal non-commercial terms, and attribution guidelines.

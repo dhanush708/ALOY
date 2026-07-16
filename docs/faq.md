@@ -7,7 +7,7 @@
 ## Installation & Setup
 
 **Q: What are the minimum system requirements?**
-> Windows 10 64-bit, 8 GB RAM, and Ollama installed. A dedicated NVIDIA GPU with 6+ GB VRAM is recommended for a good experience. CPU-only mode works but is significantly slower.
+> Windows 10 64-bit, 16 GB RAM, and Ollama installed. A dedicated GPU with 8+ GB VRAM is recommended for a good experience. CPU-only mode works but is significantly slower.
 
 **Q: Do I need Python installed?**
 > No — if you use the Windows installer (`ALOY-Setup-1.0.0.exe`). Python is bundled inside the installer. Python is only needed if you're running ALOY from source code.
@@ -19,13 +19,14 @@
 > ALOY uses Ollama to run AI models locally on your machine. Without Ollama, ALOY cannot perform any AI inference. Download Ollama from [ollama.com](https://ollama.com) — it's free.
 
 **Q: Which models should I pull?**
-> Pull all three for the full experience:
+> Pull these for the full local experience:
 > ```bash
-> ollama pull phi4:latest
-> ollama pull qwen2.5-coder:7b
+> ollama pull qwen3:14b
+> ollama pull qwen2.5-coder:14b
+> ollama pull deepseek-r1:14b
 > ollama pull nomic-embed-text:latest
 > ```
-> If you have limited VRAM, `phi4:latest` (the smallest) is required at minimum.
+> If you are VRAM-constrained, you can pull smaller versions of these models (like `qwen2.5-coder:7b`) and map them in settings.
 
 ---
 
@@ -51,7 +52,7 @@
 > Go to **Settings** → **Models**. You can assign different Ollama models to different tasks (chat, coding, embeddings).
 
 **Q: What is the Agent Grid?**
-> The Agent Grid is ALOY's autonomous coding system. When you give ALOY a software goal (e.g., "build a Flask REST API"), it activates a team of AI agents that plan, write, test, debug, and document code automatically. All actions require your approval before execution.
+> The Agent Grid is ALOY's autonomous coding system. When you give ALOY a software goal (e.g., "build a FastAPI REST API"), it activates a team of AI agents that plan, write, test, debug, and document code automatically. All actions require your approval before execution.
 
 **Q: How do I use ALOY for coding projects?**
 > Open ALOY in your browser, click **New Workspace**, and point it at your project directory. ALOY will index your files and you can ask it coding questions or trigger autonomous agent tasks.
@@ -65,13 +66,13 @@
 
 **Q: Responses are very slow. What can I do?**
 > - Ensure Ollama is using your GPU (not CPU): run `ollama ps` and check the GPU column.
-> - Update your NVIDIA drivers.
-> - Use a smaller model (e.g., `phi4:latest` instead of larger variants).
-> - Close memory-intensive applications to free VRAM.
+> - Update your GPU drivers.
+> - Use smaller model variants (e.g., `qwen2.5-coder:7b` instead of `qwen2.5-coder:14b`).
+> - Close memory-heavy applications to free VRAM.
 
 **Q: My GPU is not being used. How do I fix this?**
-> - Ensure you have CUDA-compatible NVIDIA drivers installed.
-> - Run `ollama run phi4` in a terminal and check if Ollama reports GPU acceleration.
+> - Ensure you have CUDA-compatible GPU drivers installed.
+> - Run `ollama run qwen3:14b` in a terminal and check if Ollama reports GPU acceleration.
 > - Check Ollama's documentation for GPU troubleshooting.
 
 ---

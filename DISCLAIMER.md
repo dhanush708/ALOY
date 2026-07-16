@@ -7,7 +7,7 @@
 
 ## General Disclaimer
 
-ALOY is an **experimental AI-powered desktop application** provided for personal, non-commercial use. The Software and all AI-generated outputs are provided **"as is"** without any warranty of accuracy, completeness, reliability, or fitness for a particular purpose.
+ALOY is a **local-first AI-powered desktop application** provided for personal, non-commercial use. The Software and all AI-generated outputs are provided **"as is"** without any warranty of accuracy, completeness, reliability, or fitness for a particular purpose.
 
 ---
 

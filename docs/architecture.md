@@ -3,6 +3,7 @@
 **ALOY v1.0.0** | [Back to README](../README.md)
 
 > This document describes ALOY's high-level architecture. Implementation details of proprietary subsystems are intentionally omitted.
+> For full systems specifications and threat model security analysis, refer to the [ALOY Technical Whitepaper](aloy_technical_whitepaper.pdf).
 
 ---
 
@@ -12,7 +13,7 @@ ALOY is built around three core design principles:
 
 1. **Local-First**: All computation, storage, and inference happen on your device. No cloud dependency.
 2. **Microkernel Architecture**: A central event bus decouples all subsystems, enabling modular and testable components.
-3. **Privacy by Default**: No telemetry, no data collection, no external API calls (except optional DuckDuckGo web search).
+3. **Privacy by Default**: No telemetry, no data collection, no external API calls (except optional privacy-respecting web search).
 
 ---
 
@@ -37,16 +38,17 @@ ALOY is built around three core design principles:
    ▼          ▼          ▼          ▼          ▼
 Identity   Memory    Knowledge   Model     Security
 Engine    Manager    Router     Router    Subsystem
-           (Hybrid   (6-layer   (Task→    (Confirm-
-           Vec+FTS5)  routing)   Model)    ation)
+            (Hybrid   (6-layer   (Task→    (Confirm-
+            Vec+FTS5)  routing)   Model)    ation)
                          │          │
                          ▼          ▼
-                    Web Search   Ollama
-                    (DDG API)   (Local)
-                                   │
-                              AI Models:
-                           phi4 / qwen2.5-coder /
-                           nomic-embed-text
+                     Web Search   Ollama
+                     (Local       (Local)
+                     Scraper)       │
+                                    │
+                               AI Models:
+                           qwen3 / qwen2.5-coder /
+                           deepseek-r1 / nomic-embed
 ```
 
 ---
@@ -75,28 +77,36 @@ A typical user message flows through the following stages:
    ├── Use local memory? → inject context
    ├── Use workspace files? → inject content
    ├── Use docs cache? → inject docs
-   └── Requires live web? → DuckDuckGo search
+   └── Requires live web? → Launch Search Pipeline
          │
-7. Model Router selects the target model:
-   ├── phi4:latest — chat and reasoning
-   ├── qwen2.5-coder:7b — code and agents
+7. Search Pipeline executes:
+   ├── Semantic Search Classification Check
+   ├── Query Rewriting (2-3 keyword variations)
+   ├── Parallel Search (DDG HTML scraping)
+   ├── Multi-Factor Scoring (Domain, Freshness, Relevance)
+   └── Retry Broadening (reformulate query if empty)
+         │
+8. Model Router selects the target model:
+   ├── qwen3:14b — chat and dialogue
+   ├── deepseek-r1:14b — logical reasoning and planning
+   ├── qwen2.5-coder:14b — code and agents
    └── nomic-embed-text — embeddings only
          │
-8. Prompt is assembled and sent to Ollama
+9. Prompt is assembled and sent to Ollama
          │
-9. Response tokens stream back via SSE
+10. Response tokens stream back via SSE
          │
-10. Prompt Integrity Filter scans stream
+11. Prompt Integrity Filter scans stream
     (strips any leaking internal XML tags)
          │
-11. Browser renders Markdown in real-time
+12. Browser renders Markdown in real-time
 ```
 
 ---
 
 ## Agent Grid Architecture
 
-When ALOY receives an autonomous goal (e.g., "Build a REST API"), it activates the Agent Grid:
+When ALOY receives an autonomous goal, it activates the Agent Grid:
 
 ```
 Goal Received
@@ -169,4 +179,4 @@ Memory entries decay over time if not accessed, and the system runs background a
 | **Tool Isolation** | All file paths resolved to absolute; workspace boundary enforced |
 | **Authorization Gates** | Event bus freezes pending user confirmation click |
 | **Prompt Integrity** | Stream scanner strips leaking `<identity>` / `<system>` XML tags |
-| **Local-Only** | Zero external API calls except optional DDG search |
+| **Local-Only** | Zero external API calls except optional privacy-respecting web search |
