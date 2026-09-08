@@ -1,5 +1,39 @@
 <div align="center">
 
+# 🚨 IMPORTANT — READ THIS FIRST
+
+## 🧠 LOOKING FOR THE ACTUAL ALOY SOURCE CODE?
+
+### ⚠️ **THIS IS NOT THE CURRENT SOURCE-CODE REPOSITORY**
+
+The **actual ALOY implementation, source code, and latest engineering work** are maintained in **ALOY-Core**.
+
+### 👉 **[🔥 OPEN ALOY-CORE — CURRENT SOURCE CODE →](https://github.com/dhanush708/ALOY-Core)**
+
+<a href="https://github.com/dhanush708/ALOY-Core">
+  <img src="https://img.shields.io/badge/🧠%20ALOY--CORE-CURRENT%20SOURCE%20CODE-success?style=for-the-badge&logo=github" alt="ALOY-Core — Current Source Code"/>
+</a>
+
+**This is the repository you should visit to inspect the actual ALOY implementation.**
+
+---
+
+### 📚 REPOSITORY ROLES
+
+**`ALOY-Core` → Source Code • Implementation • Engineering**  
+**`ALOY` → Documentation • Issues • Project Tracking**
+
+### ⚡ **ONE PROJECT. TWO REPOSITORIES. CLEAR ROLES.**
+
+</div>
+
+<br/>
+
+<br/>
+
+<div align="center">
+
+
 <img src="assets/aloy_banner.png" alt="ALOY — Advanced Local-First Agentic Operating System" width="100%"/>
 
 # ALOY
