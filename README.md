@@ -18,6 +18,63 @@
 </div>
 
 <br/>
+---
+
+<div align="center">
+
+## 🚨 THIS IS THE ALOY PROJECT — START HERE
+
+<table>
+<tr>
+<td align="center" width="50%">
+
+### 🧠 CURRENT SOURCE CODE
+
+<a href="https://github.com/dhanush708/ALOY-Core">
+  <img src="https://img.shields.io/badge/✅%20LIVE%20SOURCE%20CODE-ALOY--CORE-00C853?style=for-the-badge&logo=github&logoColor=white" alt="ALOY-Core Source Code"/>
+</a>
+
+<br/><br/>
+
+**The complete, current ALOY implementation is maintained here:**
+
+### 👉 [github.com/dhanush708/ALOY-Core](https://github.com/dhanush708/ALOY-Core)
+
+**This is the repository to review for the actual engineering work.**
+
+</td>
+
+<td align="center" width="50%">
+
+### 📚 PROJECT DOCS & TRACKING
+
+<a href="https://github.com/dhanush708/ALOY/issues">
+  <img src="https://img.shields.io/badge/📚%20DOCS%20%26%20ISSUES-ALOY-1E88E5?style=for-the-badge&logo=github&logoColor=white" alt="ALOY Documentation and Issues"/>
+</a>
+
+<br/>
+
+Project documentation, development notes, issue tracking, and public project information are maintained here:
+
+### 👉 [ALOY — Documentation & Issues](https://github.com/dhanush708/ALOY/issues)
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+> **⚡ Important:** The `ALOY` repository contains the project-facing documentation and issue tracking.  
+> **The `ALOY-Core` repository contains the actual current source code and implementation.**
+
+### 🔗 One Project. Two Repositories. Clear Roles.
+
+**ALOY-Core → Source Code & Engineering**  
+**ALOY → Documentation, Issues & Project Tracking**
+
+</div>
+
+---
 
 > **ALOY is a fully offline, privacy-first AI operating system.** It runs entirely on your local hardware — no cloud dependencies, no subscription fees, no external API keys. It thinks, plans, codes, tests, and learns locally using open-source models through [Ollama](https://ollama.com).
 
